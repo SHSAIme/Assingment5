@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+ integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    #bord{
+        border-top: 5px solid rgb(0, 128, 38);
+        border-radius: 20px;
+    }
+  </style>
+</head>
+<body class="w-11/12 mx-auto">
+   <header>
+     <div class="navbar bg-base-100 shadow-sm">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl"><img class="w-[50px] h-[50px]" src="/assets/github-logo.png" alt="">GitHub Issues Tracker</a>
+  </div>
+  <div class="flex gap-2">
+    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+    <div class="dropdown dropdown-end">
+      <div tabindex="0" role="button" class="btn ">
+        <div class="w-auto rounded-full">
+          <button class="btn btn-primary">+ New Issue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+   </header>
+
+<section class="tab mt-[100px]">
+    <div class="tab-container flex flex-wrap mb-5 space-x-2">
+        <button id="tab-All" onclick="switchTab('All')" class="btn px-5 py-1.5 rounded-md border-2 font-medium cursor-pointer ">
+            All
+            
+        </button>
+        <button id="tab-Open" onclick="switchTab('Open')" class="btn px-5 py-1.5 rounded-md border-2 font-medium cursor-pointer ">
+              Open
+        </button>
+        <button id="tab-Closed" onclick="switchTab('Closed')" class="btn px-5 py-1.5 rounded-md border-2 font-medium cursor-pointer ">
+             Close
+        </button>
+        
+    </div>
+</section>
+<section class="count">
+     <div class="navbar bg-base-100 shadow-sm">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl"><img class="w-[50px] h-[50px] mt-[10px]" src="/assets/Aperture.png" alt="">
+    </a>
+     <p class="ml-[70px]">Track and manage your project issues</p>
+
+  </div>
+  <div class="flex gap-2">
+     <div class="flex items-center space-x-1"><span class="text-green-400"><i class="fa-solid fa-circle"></i></span><p>Open</p></div>
+     <div class="flex items-center space-x-1"><span class="text-purple-400"><i class="fa-solid fa-circle"></i></span><p>closed</p></div>
+   
+  </div>
+</div>
+
+</section>
+
+<section id="sob-conatiner" class=" mt-3">
+   <div id="card-all" class="grid grid-cols-4 gap-3 items-center rounded-xl">
+  
+   </div>
+    
+</section>
+<section class="open-container">
+open
+
+</section>
+<section class="closed-container">close</section>
+
+
+<script src="/fungtions.js"></script>
+</body>
+</html>
