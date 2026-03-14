@@ -1,9 +1,7 @@
 let currenTab = "All";
 const tabactive = ["bg-gray-300","border-1","text-black"];
 const tabInactive = ["bg-white","border-1","text-black"];
-const allContainer = document.getElementById("sob-conatiner");
-const openContainer = document.getElementById("open-container");
-const closedContainer = document.getElementById("closed-container");
+
 
 
 function switchTab(tab){
@@ -22,7 +20,7 @@ else{
 }
        
    }
-}
+} switchTab(currenTab)
 
 const loadData = () =>{
     fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
@@ -30,16 +28,29 @@ const loadData = () =>{
    .then((json) => displayCard(json.data)
    )
 };
+
+
+
+
 const displayCard = (cards) =>
 {
-const allContainer = document.getElementById("card-all");
-allContainer.innerHTML="";
+   
+const allContainer2 = document.getElementById("card-all");
+allContainer2.innerHTML="";
+
 for(let card of cards) {  
-    console.log(card);
     
-    
+     let borderColor = "";
+
+if(card.status === "open"){
+    borderColor = "border-t-4 border-green-500 rounded-[10px]";
+}
+else if(card.status === "closed"){
+    borderColor = "border-t-4 border-purple-500 rounded-[10px]";
+} 
+
     const cardDiv= document.createElement("div")
-    cardDiv.innerHTML = `  <div class="shadow-xl ">
+    cardDiv.innerHTML = `  <div class="card-c shadow-xl ${borderColor} ">
         <div id="bord" class="flex justify-between items-center w-11/12 mx-auto">
             <button class="btn bg-[#00A96E30] rounded-full"><img src="/assets/Open-Status.png" alt=""></button>
             <button class="btn bg-[#F59E0B30] rounded-full">${card.priority}</button>
@@ -57,9 +68,9 @@ for(let card of cards) {
 by john_doe</p>
 <p>1/15/2024</p>
           </div></div> 
-    </div>`
+    </div>`;
 
-    allContainer.append(cardDiv)
+    allContainer2.append(cardDiv)
 };
 
 };
